@@ -1,5 +1,5 @@
 #define _USE_MATH_DEFINES
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 long double dist(long double a, long double b) {
