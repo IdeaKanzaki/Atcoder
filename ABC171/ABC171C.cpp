@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+char toA(int num){
+  switch(num){
+    case 1: return 'a';
+    case 2: return 'b';
+    case 3: return 'c';
+    case 4: return 'd';
+    case 5: return 'e';
+    case 6: return 'f';
+    case 7: return 'g';
+    case 8: return 'h';
+    case 9: return 'i';
+    case 10: return 'j';
+    case 11: return 'k';
+    case 12: return 'l';
+    case 13: return 'm';
+    case 14: return 'n';
+    case 15: return 'o';
+    case 16: return 'p';
+    case 17: return 'q';
+    case 18: return 'r';
+    case 19: return 's';
+    case 20: return 't';
+    case 21: return 'u';
+    case 22: return 'v';
+    case 23: return 'w';
+    case 24: return 'x';
+    case 25: return 'y';
+    case 0: return 'z';
+    default : return -1;
+  }
+}
+
+int main() {
+    //入力
+    long long n;
+    cin >> n;
+    int name[15];
+    //10^15+1を26で11回割ると0.~になるので(26進数と考える))
+    int temp = 0;
+    for (int i=1; i<=14; i++) {
+        name[i] = n % 26;
+        n = (n-1) / 26;
+        temp++;
+        if (n <= 0) break;
+    }
+    string ans;
+    for (int i=temp; i>=1; i--) {
+        if (i == temp) ans = toA(name[temp]);
+        else ans += toA(name[i]);
+    }
+    cout << ans << endl;
+    return 0;
+}
